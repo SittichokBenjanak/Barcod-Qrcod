@@ -33,6 +33,7 @@ public class Genbarcode extends AppCompatActivity {
         public void onClick(View v) {
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             try {
+                // สุ่มตัวเลข แล้วเอาค่า Barcode ไปกำหนดค่า ให้กับ Barcode
                 Random random = new Random();
                 int random_int = random.nextInt((384000000 - 125000000) + 1) + 125000000;
                 String Barcode = Integer.toString(random_int);
