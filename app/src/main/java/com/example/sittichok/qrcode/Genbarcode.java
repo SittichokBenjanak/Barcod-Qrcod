@@ -33,12 +33,12 @@ public class Genbarcode extends AppCompatActivity {
         public void onClick(View v) {
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             try {
-                // สุ่มตัวเลข แล้วเอาค่า Barcode ไปกำหนดค่า ให้กับ Barcode
+                // สุ่มตัวเลข แล้วเอาค่า Barcode ไปกำหนดค่า ให้กับ Qrcode
                 Random random = new Random();
                 int random_int = random.nextInt((384000000 - 125000000) + 1) + 125000000;
                 String Barcode = Integer.toString(random_int);
 
-                BitMatrix bitMatrix = multiFormatWriter.encode(Barcode, BarcodeFormat.CODE_128,1000,300);
+                BitMatrix bitMatrix = multiFormatWriter.encode(Barcode, BarcodeFormat.QR_CODE,1000,300);
                 BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                 Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                 image.setImageBitmap(bitmap);
